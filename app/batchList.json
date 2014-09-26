@@ -1,0 +1,6 @@
+{
+	"Rodar Testes Unitários" : "start cmd /k echo Mama Periquito",
+	"Compilar para distribuição " : "start cmd /k Call fscommand//nodeInstall.bat 4444",
+	"Controle de Qualidade - jsHint" : "valueTest3",
+	"NPM install" : "nodeInstall.bat"
+}
