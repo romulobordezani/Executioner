@@ -10,6 +10,7 @@
 
 	public class ScriptExecutor extends MovieClip {
 
+		
 		public function ScriptExecutor(){
 			bindAppMouseEvents();
 			loadConfigFromUrl();
@@ -19,28 +20,36 @@
 
 		private function bindAppMouseEvents(){
 
-			this.bg.bg_in.drag.addEventListener( MouseEvent.MOUSE_DOWN, function(){
+			var mainButtons = this.bts ;
+			var bg = this.bg ;
+			var windowButtons = this.windowButtons;
+			
+			this.brokenDisplay.doubleClickEnabled=true; 
+			
+			this.brokenDisplay.addEventListener( MouseEvent.DOUBLE_CLICK, function(){
+				
+				if( mainButtons.alpha > 0){					
+					mainButtons.alpha = .0;
+					bg.alpha = .0;
+					windowButtons.alpha = .0;					
+				}else{
+					mainButtons.alpha = 1;
+					bg.alpha = 1;
+					windowButtons.alpha = 1;
+				}
+				
+			});
+			
+			this.brokenDisplay.addEventListener( MouseEvent.MOUSE_DOWN, function(){
 				stage.nativeWindow.startMove();
 			});
 
-			this.bg.bg_in.drag.addEventListener( MouseEvent.ROLL_OVER, function(){
+			this.brokenDisplay.addEventListener( MouseEvent.ROLL_OVER, function(){
 				Mouse.cursor="hand";
 			});
 
-			this.bg.bg_in.drag.addEventListener( MouseEvent.ROLL_OUT, function(){
+			this.brokenDisplay.addEventListener( MouseEvent.ROLL_OUT, function(){
 				Mouse.cursor="arrow";
-			});
-
-			this.bg.bg_in.bt_close.addEventListener( MouseEvent.CLICK, function(){
-				stage.nativeWindow.close();
-			});
-
-			this.bg.bg_in.bt_minimize.addEventListener( MouseEvent.CLICK, function(){
-				stage.nativeWindow.minimize();
-			});
-
-			this.bg.bg_in.bt_allwaysOnTop.addEventListener( MouseEvent.CLICK, function(){
-				stage.nativeWindow.alwaysInFront = !stage.nativeWindow.alwaysInFront;
 			});
 
 		}
@@ -48,7 +57,7 @@
 
 		private function loadConfigFromUrl():void {
 
-		    var urlRequest:URLRequest  = new URLRequest('batchList.json');
+		    var urlRequest:URLRequest  = new URLRequest('commandList.json');
 
 		    var urlLoader:URLLoader = new URLLoader();
 		    urlLoader.addEventListener(Event.COMPLETE, completeHandler);
@@ -88,9 +97,5 @@
 		}
 
 
-
 	}
-
-
-
 }

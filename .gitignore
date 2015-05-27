@@ -1,9 +1,2 @@
-node_modules
-dist
-.tmp
-.project
-app/bower_components
-app/target
-/app/styles/main.css
-/test-results.xml
-coverage
+app/cert
+.git

@@ -1,0 +1,4 @@
+{
+	"Start Mongo" : "start cmd /k mongod.exe",
+	"Run Server" : "start cmd /k grunt"
+}
