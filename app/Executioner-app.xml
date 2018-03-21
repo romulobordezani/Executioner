@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no" ?>
-<application xmlns="http://ns.adobe.com/air/application/3.8">
+<application xmlns="http://ns.adobe.com/air/application/25.0">
   <id>Executioner</id>
   <versionNumber>1.0</versionNumber>
   <filename>Executioner</filename>
@@ -59,8 +59,12 @@
   
 
   
+
+  
 <!-- To localize the description, use the following format for the description element.<description><text xml:lang="en">English App description goes here</text><text xml:lang="fr">French App description goes here</text><text xml:lang="ja">Japanese App description goes here</text></description>-->
   <name>Executioner</name>
+  
+
   
 
   
